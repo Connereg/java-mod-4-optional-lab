@@ -11,6 +11,8 @@ public class Main {
         String bookName = scanner.nextLine();
         Optional<String> optAuthor = Book.getAuthor(bookName);
 
+        optAuthor.ifPresentOrElse(author -> System.out.println( bookName + " written by " + author), () -> System.out.println( bookName + " written by UNKNOWN"));
+
         // write your code here
     }
 }
